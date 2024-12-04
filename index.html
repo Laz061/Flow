@@ -4,36 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+    <title>Flow</title>
 </head>
 
 <body>
     <div id="wrapper">
 
-        <div id="todo">
-            <div id="inputWrapper">
+        <div id="content">
 
-                <input type="text" id="itemInput">
+            <div id="todo">
 
-                <button onclick="addItem()">Add Item</button>
+                <div id="inputWrapper">
 
-            </div>
-            <div id="todoItems">
+                    <input type="text" id="itemInput">
 
-            </div>
-        </div>
+                    <button onclick="addItem()" id="addButton"><i data-feather="plus"
+                            style="width: 100%; height: 100%;"></i></button>
 
-        <div id="time">
-            <div id="clock">
+                </div>
 
-            </div>
-            <div id="pomodoro">
+                <div id="todoItems">
+
+                </div>
 
             </div>
+
+            <div id="time">
+                <div id="clock">
+
+                </div>
+                <div id="pomodoro">
+
+                </div>
+            </div>
+
         </div>
 
     </div>
 
+
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>feather.replace();</script>
     <script src="index.js"></script>
     <script src="todo.js"></script>
 </body>

@@ -1,13 +1,23 @@
 let items = [];
 
-const itemsDiv = document.getElementById("todoItems");
+const contentDiv = document.getElementById("todoItems");
 const input = document.getElementById("itemInput");
+
+//Allows user to add todo list item by tapping enter
+input.addEventListener("keypress",
+    //Anonymous function that calls add Item when enter is pressed
+    function (event) {
+        if (event.key == "Enter") {
+            addItem();
+        }
+    }
+)
 
 const storageKey = "todoItems";
 
 function renderItems() {
 
-    itemsDiv.innerHTML = null;
+    contentDiv.innerHTML = null;
 
     for (const [index, item] of Object.entries(items)) {
 
@@ -24,7 +34,7 @@ function renderItems() {
         listItem.appendChild(text);
         listItem.appendChild(deleteIcon);
 
-        itemsDiv.appendChild(listItem);
+        contentDiv.appendChild(listItem);
     }
 }
 
