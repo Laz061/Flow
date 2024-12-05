@@ -2,6 +2,7 @@ let items = [];
 
 const contentDiv = document.getElementById("todoItems");
 const input = document.getElementById("itemInput");
+const storageKey = "todoItems";
 
 //Allows user to add todo list item by tapping enter
 input.addEventListener("keypress",
@@ -13,29 +14,41 @@ input.addEventListener("keypress",
     }
 )
 
-const storageKey = "todoItems";
-
 function renderItems() {
 
     contentDiv.innerHTML = null;
 
     for (const [index, item] of Object.entries(items)) {
 
+        //todo text
         const text = document.createElement("p");
-        text.id = "item";
+        text.id = "itemText";
         text.innerHTML = item;
 
+        //delete icon
+        const deleteIcon = document.createElement("i");
+        deleteIcon.setAttribute("data-feather", "trash");
+        deleteIcon.id = "deleteIcon";
+        deleteIcon.style.width = "100%";
+        deleteIcon.style.height = "100%";
 
-        const deleteIcon = document.createElement("button");
-        deleteIcon.innerHTML = "delete";
-        deleteIcon.onclick = () => deleteItem(index);
 
-        const listItem = document.createElement("div")
-        listItem.appendChild(text);
-        listItem.appendChild(deleteIcon);
+        //delete button
+        const deleteButton = document.createElement("button");
+        deleteButton.id = "deleteButton";
+        deleteButton.onclick = () => deleteItem(index);
+        deleteButton.appendChild(deleteIcon);
 
-        contentDiv.appendChild(listItem);
+        const itemContainer = document.createElement("div");
+        itemContainer.id = "itemContainer";
+        itemContainer.appendChild(deleteButton);
+        itemContainer.appendChild(text);
+
+
+        contentDiv.appendChild(itemContainer);
     }
+
+    feather.replace();
 }
 
 function saveItems() {

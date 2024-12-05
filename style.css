@@ -15,6 +15,10 @@
 /* below are styles for todo list*/
 #todo {
     flex: 2;
+    display: flex;
+    flex-direction: column;
+
+    padding: 30px;
 }
 
 #inputWrapper {
@@ -25,7 +29,7 @@
 }
 
 #itemInput {
-    width: 80%;
+    flex: 4;
     margin-right: 2%;
 
     border-style: solid;
@@ -37,18 +41,72 @@
 }
 
 #addButton {
+    flex: 1;
     border-style: none;
     background-color: white;
     color: black;
-    width: 20%;
 }
 
 #todoItems {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    margin-top: 5%;
+    overflow: auto;
+}
+
+#itemContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 5%;
+    margin-top: 20px;
+}
+
+#itemText {
+    flex: 5;
+    font-size: 30px;
+    vertical-align: middle;
+}
+
+#deleteButton {
+    flex: 1;
+    display: inline;
+    width: 100%;
+    height: 100%;
+
+    margin-right: 20px;
+
+    border: none;
+    background-color: white;
+}
+
+#deleteIcon {
+    width: 100%;
 }
 
 /*styling for the clock and timer*/
 #time {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+#clockContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#clock {
+    font-family: monospace;
+    font-size: 6.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+#pomodoro {
     flex: 3;
 }
