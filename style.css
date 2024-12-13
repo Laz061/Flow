@@ -1,0 +1,143 @@
+#wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+#content {
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    flex-direction: row;
+}
+
+/* below are styles for todo list*/
+#todo {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+
+    padding: 30px;
+}
+
+#inputWrapper {
+    display: flex;
+    width: 100%;
+    height: 5%;
+    justify-content: center;
+}
+
+#itemInput {
+    flex: 4;
+    margin-right: 2%;
+
+    border-style: solid;
+    border-width: 5px;
+    border-color: black;
+    border-radius: 40px;
+    padding: 20px;
+    font-size: 20px;
+}
+
+#addButton {
+    flex: 1;
+    border-style: none;
+    background-color: white;
+    color: black;
+}
+
+#todoItems {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-top: 5%;
+    overflow: auto;
+}
+
+#itemContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 5%;
+    margin-top: 20px;
+}
+
+#itemText {
+    flex: 5;
+    font-size: 30px;
+    vertical-align: middle;
+}
+
+#deleteButton {
+    flex: 1;
+    display: inline;
+    width: 100%;
+    height: 100%;
+
+    margin-right: 20px;
+
+    border: none;
+    background-color: white;
+}
+
+#deleteIcon {
+    width: 100%;
+}
+
+/*styling for the clock*/
+#time {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+#clockContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#clock {
+    font-family: monospace;
+    font-size: 6.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*Styling for pomodoro*/
+#pomodoro {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#timerOptions {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+#workLength {
+    height: 40px;
+}
+
+#breakLength {
+    height: 40px;
+}
+
+#startButton {
+    height: 40px;
+    width: 40px;
+    border: none;
+    background-color: white;
+}
+
+#timer {
+    flex: 3;
+    font-size: 6.5rem;
+}
