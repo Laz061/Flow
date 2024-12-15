@@ -3,6 +3,9 @@
     height: 100vh;
     display: flex;
     align-items: center;
+
+    font-family: 'Satoshi', sans-serif;
+    font-weight: bold;
 }
 
 #content {
@@ -55,7 +58,7 @@
     overflow: auto;
 }
 
-#itemContainer {
+.itemContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -64,27 +67,22 @@
     margin-top: 20px;
 }
 
-#itemText {
-    flex: 5;
+.itemText {
+    flex: 10;
     font-size: 30px;
     vertical-align: middle;
 }
 
-#deleteButton {
+.deleteButton {
     flex: 1;
     display: inline;
-    width: 100%;
     height: 100%;
-
-    margin-right: 20px;
 
     border: none;
     background-color: white;
 }
 
-#deleteIcon {
-    width: 100%;
-}
+#deleteIcon {}
 
 /*styling for the clock*/
 #time {
@@ -101,7 +99,6 @@
 }
 
 #clock {
-    font-family: monospace;
     font-size: 6.5rem;
     font-weight: bold;
     text-align: center;

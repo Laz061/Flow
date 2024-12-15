@@ -22,25 +22,25 @@ function renderItems() {
 
         //todo text
         const text = document.createElement("p");
-        text.id = "itemText";
+        text.classList.add("itemText");
         text.innerHTML = item;
 
         //delete icon
         const deleteIcon = document.createElement("i");
-        deleteIcon.setAttribute("data-feather", "trash");
-        deleteIcon.id = "deleteIcon";
+        deleteIcon.setAttribute("data-feather", "x");
+        deleteIcon.classList.add("deleteIcon");
         deleteIcon.style.width = "100%";
         deleteIcon.style.height = "100%";
 
 
         //delete button
         const deleteButton = document.createElement("button");
-        deleteButton.id = "deleteButton";
+        deleteButton.classList.add("deleteButton");
         deleteButton.onclick = () => deleteItem(index);
         deleteButton.appendChild(deleteIcon);
 
         const itemContainer = document.createElement("div");
-        itemContainer.id = "itemContainer";
+        itemContainer.classList.add("itemContainer");
         itemContainer.appendChild(deleteButton);
         itemContainer.appendChild(text);
 
