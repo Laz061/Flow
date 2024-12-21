@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="style.css">
-
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300&display=swap" rel="stylesheet">
 
+    <script src="jquery-3.7.1.js"></script>
     <title>Flow</title>
 </head>
 
@@ -41,14 +41,22 @@
                     </div>
                 </div>
                 <div id="pomodoro">
+
                     <div id="timerOptions">
-                        <input type="number" id="workLengthInput" placeholder="Work Length">
-                        <input type="number" id="breakLengthInput" placeholder="Break Length">
-                        <button id="startButton" onclick="toggle()"><i data-feather="play"
-                                style="height: 100%; width: 100%;"></i></button>
+                        <div id="timerDisplay">
+                            00:00
+                        </div>
+                        <input class="workKnob" id="workLengthInput" value="0" data-linecap=round>
+                        <input class="breakKnob" id="breakLengthInput" value="0" data-linecap=round>
+
                     </div>
-                    <div id="timer">
-                        1
+
+                    <div id="timerControl">
+                        <button class="timerButton" onclick="toggle()"><i data-feather="play"
+                                style="height: 100%; width: 100%;"></i></button>
+                        <button class="timerButton" onclick="resetTimer()"><i data-feather="refresh-cw"
+                                style="height: 100%; width: 100%;"></i></button>
+
                     </div>
 
                 </div>
@@ -58,14 +66,13 @@
 
     </div>
 
-
-
     <script src="index.js"></script>
     <script src="todo.js"></script>
     <script src="clock.js"></script>
     <script src="pomodoro.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <script>feather.replace()</script>
+    <script src="jquery.knob.js"></script>
 </body>
 
 </html>

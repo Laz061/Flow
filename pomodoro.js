@@ -1,7 +1,6 @@
-
 const workInput = document.getElementById("workLengthInput");
 const breakInput = document.getElementById("breakLengthInput");
-const timer = document.getElementById("timer");
+const timer = document.getElementById("timerDisplay");
 
 //Boolean used to toggle Timer on and off
 let runTimer = false;
@@ -42,6 +41,15 @@ function toggle() {
     }
 }
 
+function resetTimer() {
+    runTimer = false;
+    clearInterval(timerID);
+
+    workLength = undefined;
+    breakLength = undefined;
+    updateClock(0);
+}
+
 function countDown() {
     updateClock(timeLeft)
 
@@ -70,3 +78,25 @@ function updateClock(timeLeft) {
     timerString = `${minutes.toString().padStart(2, 0)}:${seconds.toString().padStart(2, 0)}`
     timer.innerHTML = timerString;
 }
+
+$(function () {
+    $(".workKnob").knob({
+        value: 0,
+        min: 0,
+        max: 60,
+        stopper: false,
+        fgColor: "#000000",
+
+        'release': function (v) { workLength = v; }
+    });
+
+    $(".breakKnob").knob({
+        value: 0,
+        min: 0,
+        max: 60,
+        stopper: false,
+        fgColor: "#b2b2b2",
+
+        'release': function (v) { breakLength = v; }
+    });
+});

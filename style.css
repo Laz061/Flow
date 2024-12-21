@@ -113,28 +113,14 @@
     align-items: center;
 }
 
-#timerOptions {
-    flex: 1;
-    display: flex;
-    align-items: center;
+#timerDisplay {
+    font-size: 6.5rem;
+    text-align: center;
 }
 
-#workLength {
-    height: 40px;
-}
-
-#breakLength {
-    height: 40px;
-}
-
-#startButton {
+.timerButton {
     height: 40px;
     width: 40px;
     border: none;
     background-color: white;
-}
-
-#timer {
-    flex: 3;
-    font-size: 6.5rem;
 }
