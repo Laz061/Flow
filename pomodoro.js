@@ -1,5 +1,3 @@
-const workInput = document.getElementById("workLengthInput");
-const breakInput = document.getElementById("breakLengthInput");
 const timer = document.getElementById("timerDisplay");
 
 //Boolean used to toggle Timer on and off
@@ -20,20 +18,19 @@ function toggle() {
 
     if (runTimer == false) {
 
-        if (!workInput.value || !breakInput.value) {
+        if (!workLength || !breakLength) {
             return;
         }
 
-        workLength = workInput.value;
-        breakLength = breakInput.value;
         timeLeft = workLength * 60;
-
-        //reset input boxes
-        workInput.value = "";
-        breakInput.value = "";
+        $(".displayKnob").trigger(
+            'configure',
+            {
+                "max": workLength * 60,
+            }
+        );
 
         runTimer = true;
-        updateClock(timeLeft);
         timerID = setInterval(countDown, 1000);
     } else if (runTimer == true) {
         runTimer = false
@@ -53,7 +50,7 @@ function resetTimer() {
 function countDown() {
     updateClock(timeLeft)
 
-    //counts down one seconds if theres time left
+    //counts down one second if theres time left
     //switches to the next cycle if time is zero
     if (timeLeft > 0) {
         timeLeft = timeLeft - 1;
@@ -61,9 +58,22 @@ function countDown() {
         if (work == true) {
             timeLeft = breakLength * 60;
             work = false;
+            $(".displayKnob").trigger(
+                'configure',
+                {
+                    "max": breakLength * 60,
+                }
+            );
         } else if (work == false) {
             timeLeft = workLength * 60;
             work = true;
+
+            $(".displayKnob").trigger(
+                'configure',
+                {
+                    "max": workLength * 60,
+                }
+            );
         }
     }
 
@@ -74,9 +84,10 @@ function countDown() {
 function updateClock(timeLeft) {
     minutes = Math.floor(timeLeft / 60);
     seconds = timeLeft % 60;
+    $(".displayKnob").val(timeLeft).trigger("change")
 
-    timerString = `${minutes.toString().padStart(2, 0)}:${seconds.toString().padStart(2, 0)}`
-    timer.innerHTML = timerString;
+    //timerString = `${minutes.toString().padStart(2, 0)}:${seconds.toString().padStart(2, 0)}`
+    //timer.innerHTML = timerString;    
 }
 
 $(function () {
@@ -85,9 +96,11 @@ $(function () {
         min: 0,
         max: 60,
         stopper: false,
+        thickness: 0.25,
+
         fgColor: "#000000",
 
-        'release': function (v) { workLength = v; }
+        'release': function (v) { workLength = v; },
     });
 
     $(".breakKnob").knob({
@@ -95,8 +108,18 @@ $(function () {
         min: 0,
         max: 60,
         stopper: false,
+        thickness: 0.25,
         fgColor: "#b2b2b2",
 
-        'release': function (v) { breakLength = v; }
+        'release': function (v) { breakLength = v; },
     });
+
+    $(".displayKnob").knob({
+        min: 0,
+        stopper: false,
+        thickness: 0.25,
+        fgColor: "#000000",
+    });
+
 });
+
