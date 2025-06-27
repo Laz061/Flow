@@ -1,0 +1,28 @@
+.appContainer {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+
+    font-family: 'Satoshi', sans-serif;
+    font-weight: bold;
+}
+
+.content {
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.leftHalf{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.rightHalf{
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+}

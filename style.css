@@ -82,8 +82,6 @@
     background-color: white;
 }
 
-#deleteIcon {}
-
 /*styling for the clock*/
 #time {
     flex: 3;

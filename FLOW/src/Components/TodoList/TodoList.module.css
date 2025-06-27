@@ -1,0 +1,64 @@
+.todoWrapper{
+    padding: 20px;
+}
+
+.inputWrapper {
+    display: flex;
+}
+
+.todoInput {
+    flex: 10;
+    margin-right: 2%;
+    padding-left: 15px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+    border-radius: 40px;
+
+    font-family: 'Satoshi', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    
+}
+
+.addButton {
+    flex: 1;
+    border-style: none;
+    background-color: white;
+    color: black;
+    font-size: 35px;
+}
+
+.todoItems {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-top: 5%;
+    overflow: auto;
+}
+
+.itemContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+
+}
+
+.itemText {
+    flex: 10;
+    vertical-align: middle;
+    font-size: 25px;
+    margin: 0px;
+}
+
+.deleteButton {
+    flex: 1;
+    display: inline;
+    height: 100%;
+    border: none;
+    background-color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
