@@ -1,0 +1,99 @@
+.todoWrapper{
+    padding-left: 20px;
+}
+
+.inputWrapper {
+    display: flex;
+
+    /* Glass background */
+    background: rgba(255, 255, 255, 0.25);
+    
+    /* Blur effect */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); /* Safari support */
+    
+    /* Border styling */
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    
+    /* Shadow for depth */
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.15);
+}
+
+.inputWrapper input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
+}
+
+.todoInput {
+    flex: 10;
+    padding-left: 15px;
+    border-radius: 20px;
+    border: none;
+
+    background-color: transparent;
+    color: white;
+
+    font-family: 'Satoshi', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.addButton {
+    flex: 1;
+    border-style: none;
+    background-color: transparent;
+    color: white;
+    font-size: 35px;
+}
+
+.todoItems {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-top: 5%;
+}
+
+.itemContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+
+
+    background: rgba(255, 255, 255, 0.25);
+    
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); /* Safari support */
+    
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.1);
+}
+
+.itemText {
+    flex: 10;
+    margin: 0px;
+    padding-left: 15px;
+    vertical-align: middle;
+    font-size: 25px;
+    white-space: normal;
+    word-break: break-word;
+    
+    color: white;
+}
+
+.deleteButton {
+    flex: 1;
+    display: inline;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+
+    color: white;
+
+    font-size: 30px;
+    font-weight: bold;
+}
